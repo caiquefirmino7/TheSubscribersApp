@@ -38,7 +38,7 @@ O The Subscribers App é um aplicativo de estudos desenvolvido para praticar e a
 
 ### Passo 1: Baixar o APK
 
-1. Baixe o arquivo APK do aplicativo.
+1. Baixe o arquivo APK do aplicativo clicando [aqui](https://github.com/caiquefirmino7/TheSubscribersApp/raw/master/apk/TheSubscriberApp.apk)
 2. Certifique-se de que a opção "Fontes Desconhecidas" está ativada em seu dispositivo Android. Você pode encontrá-la nas configurações de segurança do seu dispositivo.
 3. Clique no arquivo APK baixado para iniciar o processo de instalação.
 
