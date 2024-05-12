@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.TheSubscribrerApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/depressed_blue</item>
+        <item name="colorPrimaryVariant">@color/depressed_blue</item>
+    </style>
+
+    <style name="Theme.TheSubscribrerApp" parent="Base.Theme.TheSubscribrerApp" />
+
+    <!-- styles.xml -->
+    <style name="SplashScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+</resources>
