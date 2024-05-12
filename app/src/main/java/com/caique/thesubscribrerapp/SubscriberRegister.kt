@@ -1,6 +1,9 @@
 package com.caique.thesubscribrerapp
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -10,6 +13,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.util.Locale
 
 class SubscriberRegister : AppCompatActivity() {
 
@@ -24,6 +28,20 @@ class SubscriberRegister : AppCompatActivity() {
         initViews()
         btnSubmit()
 
+        nameLogin.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+            @SuppressLint("SetTextI18n")
+            override fun afterTextChanged(s: Editable?) {
+                val text = s.toString()
+                if (text.isNotEmpty() && text[0].isLowerCase()) {
+                    nameLogin.setText(text.substring(0, 1).uppercase(Locale.ROOT) + text.substring(1))
+                    nameLogin.setSelection(nameLogin.length())
+                }
+            }
+        })
 
     }
 
@@ -58,7 +76,7 @@ class SubscriberRegister : AppCompatActivity() {
             withContext(Dispatchers.Main) {
                 Toast.makeText(
                     app.applicationContext,
-                    "Usuário inscrito com sucesso!",
+                    "Assinante inscrito com sucesso!",
                     Toast.LENGTH_SHORT
                 ).show()
             }

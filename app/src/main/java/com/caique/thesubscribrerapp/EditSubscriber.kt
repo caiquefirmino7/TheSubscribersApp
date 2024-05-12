@@ -31,7 +31,7 @@ class EditSubscriber : AppCompatActivity() {
                 subscriber = getSubscriberById(subscriberId)
                 dataSubscriber()
             } catch (e: Exception) {
-                Toast.makeText(this@EditSubscriber, "Usuário nao encontrado!", Toast.LENGTH_SHORT)
+                Toast.makeText(this@EditSubscriber, "Assinante não encontrado!", Toast.LENGTH_SHORT)
                     .show()
                 finish()
             }
@@ -63,7 +63,7 @@ class EditSubscriber : AppCompatActivity() {
             val app = application as App
             val dao = app.database.subscriberDao()
             dao.getSubscriberById(subscriberId)
-                ?: throw IllegalStateException("Usuário nao encontrado!")
+                ?: throw IllegalStateException("Assinante não encontrado!")
         }
 
     }

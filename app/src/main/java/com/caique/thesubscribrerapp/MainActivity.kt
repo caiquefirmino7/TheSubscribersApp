@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -120,11 +121,18 @@ class MainActivity : AppCompatActivity() {
     // Confirmação de exclusão de um assinante
     private fun confirmDelete(subscriber: SubscriberEntity) {
         AlertDialog.Builder(this)
-            .setTitle("Excluir Item")
-            .setMessage("Tem certeza de que deseja excluir este item?")
+            .setTitle("Excluir Assinante")
+            .setMessage("Tem certeza de que deseja excluir este assinante?")
             .setPositiveButton("Sim") { dialog, _ ->
                 deleteSubscriber(subscriber)
                 dialog.dismiss()
+                CoroutineScope(Dispatchers.Main).launch {
+                    Toast.makeText(
+                        this@MainActivity,
+                        "Assinante excluído com sucesso!",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
             }
             .setNegativeButton("Não") { dialog, _ ->
                 dialog.dismiss()
